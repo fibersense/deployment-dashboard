@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q3/Q4 Deployments</title>
+<style>
+  :root{
+    --ink:#111111;
+    --paper:#ffffff;
+    --panel:#ffffff;
+    --line:#dddddd;
+    --muted:#888888;
+    --mono:'IBM Plex Mono','SF Mono',Menlo,monospace;
+    --sans:'Inter',-apple-system,'Segoe UI',sans-serif;
+
+    /* pastel traffic-light */
+    --green-bg:#e3f3e6; --green-tx:#3f7a4f;
+    --amber-bg:#fbf1dc; --amber-tx:#a3792f;
+    --red-bg:#fbe6e4;   --red-tx:#b0554b;
+    --gray-bg:#f0f0f0;  --gray-tx:#999999;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);}
+  body{padding:26px 30px;}
+  .wrap{max-width:1320px;margin:0 auto;}
+
+  header.top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.5px solid var(--ink);padding-bottom:12px;margin-bottom:20px;flex-wrap:wrap;gap:10px;}
+  header.top h1{font-size:20px;letter-spacing:-0.01em;margin:0;font-weight:600;}
+  header.top .sub{font-size:11.5px;color:var(--muted);margin-top:2px;}
+  header.top .src{font-family:var(--mono);font-size:10px;color:var(--muted);text-align:right;letter-spacing:.02em;}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-bottom:20px;border:1px solid var(--line);}
+  .kpi{background:var(--panel);padding:14px 16px;text-align:center;}
+  .kpi.warn{background:var(--red-bg);}
+  .kpi.good{background:var(--green-bg);}
+  .kpi.mid{background:var(--amber-bg);}
+  .kpi .num{font-size:22px;font-weight:600;font-family:var(--mono);line-height:1;color:var(--ink);}
+  .kpi.warn .num{color:var(--red-tx);}
+  .kpi.good .num{color:var(--green-tx);}
+  .kpi.mid .num{color:var(--amber-tx);}
+  .kpi .lbl{font-size:10px;color:var(--muted);letter-spacing:.02em;margin-top:5px;}
+
+  table.main{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);font-size:12.5px;}
+  table.main th, table.main td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;}
+  table.main thead th{background:#fff;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;text-align:center;border-bottom:1.5px solid var(--ink);}
+  table.main thead th.proj, table.main thead th.date{text-align:left;}
+  table.main td.proj{font-weight:500;font-size:13px;color:var(--ink);}
+  table.main td.center{text-align:center;}
+  table.main tbody tr:hover{background:#fafafa;}
+
+  tr.qdivider td{
+    background:var(--ink);color:#fff;font-size:10.5px;
+    text-transform:uppercase;letter-spacing:.08em;padding:7px 12px;border-bottom:none;font-weight:600;
+  }
+
+  .datecell{font-family:var(--mono);font-weight:600;font-size:13px;white-space:nowrap;color:var(--ink);}
+  .datecell.flag::after{content:" •";color:var(--muted);}
+
+  .pill{
+    display:inline-block;padding:3px 10px;border-radius:14px;
+    font-size:10px;font-weight:600;letter-spacing:.01em;
+    white-space:normal;line-height:1.3;max-width:140px;text-align:center;
+  }
+  .pill.green{background:var(--green-bg);color:var(--green-tx);}
+  .pill.amber{background:var(--amber-bg);color:var(--amber-tx);}
+  .pill.red{background:var(--red-bg);color:var(--red-tx);}
+  .pill.gray{background:var(--gray-bg);color:var(--gray-tx);font-style:italic;font-weight:500;}
+
+  th.qcol{width:52px;}
+  .qmark{font-size:13px;font-weight:700;}
+  .qmark.yes{color:var(--green-tx);}
+  .qmark.no{color:var(--red-tx);}
+
+  .stack{display:flex;flex-direction:column;align-items:center;gap:3px;}
+  .stack .miss{font-size:9px;color:var(--muted);line-height:1.35;max-width:150px;}
+  .stack .miss b{color:var(--red-tx);font-weight:600;}
+
+  .stack2{display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .stack2 .posnum{font-family:var(--mono);font-size:9.5px;color:var(--muted);}
+
+  .eqcell{display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .steps{display:flex;gap:2.5px;cursor:default;}
+  .steps .dot{width:5px;height:5px;border-radius:50%;background:var(--line);}
+  .steps .dot.on{background:var(--ink);}
+
+  .flag{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ink);padding:10px 14px;font-size:11.5px;line-height:1.5;margin-top:14px;color:var(--muted);}
+  .flag b{color:var(--ink);}
+
+  .legend-flow{margin-top:10px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 16px;}
+  .lf-row{display:flex;gap:10px;align-items:baseline;padding:4px 0;font-size:10.5px;}
+  .lf-row + .lf-row{border-top:1px solid var(--line);}
+  .lf-label{font-weight:700;color:var(--ink);width:70px;flex-shrink:0;}
+  .lf-chain{color:var(--muted);font-family:var(--mono);letter-spacing:.01em;}
+
+  footer{font-size:10.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;line-height:1.7;margin-top:18px;}
+  footer b{color:var(--ink);}
+
+  .qfilter{display:flex;gap:8px;margin-bottom:16px;}
+  .qfilter button{
+    font-family:var(--sans);font-size:12px;font-weight:600;
+    padding:7px 16px;border:1px solid var(--ink);background:#fff;color:var(--ink);
+    border-radius:20px;cursor:pointer;letter-spacing:.01em;
+  }
+  .qfilter button:hover{background:#f5f5f5;}
+  .qfilter button.active{background:var(--ink);color:#fff;}
+  tr[data-q].qhidden{display:none;}
+  tr.qdivider.qhidden{display:none;}
+
+  .viewtoggle{display:flex;gap:8px;margin-bottom:16px;}
+  .viewtoggle button{
+    font-family:var(--sans);font-size:12px;font-weight:600;
+    padding:7px 16px;border:1px solid var(--ink);background:#fff;color:var(--ink);
+    border-radius:6px;cursor:pointer;letter-spacing:.01em;
+  }
+  .viewtoggle button:hover{background:#f5f5f5;}
+  .viewtoggle button.active{background:var(--ink);color:#fff;}
+
+  #tableView.hidden, #timelineView.hidden{display:none;}
+
+  .gantt{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+  .gantt-header{display:grid;grid-template-columns:200px 1fr;border-bottom:1.5px solid var(--ink);}
+  .gantt-header .ghcorner{padding:10px 14px;}
+  .gantt-months{position:relative;display:grid;grid-template-columns:repeat(3,1fr);}
+  .gantt-months .gmonth{
+    padding:10px 14px;font-size:12px;font-weight:700;color:var(--ink);
+    border-left:1px solid var(--line);text-align:center;
+  }
+  .gantt-months .gmonth:first-child{border-left:none;}
+  .gantt-body{position:relative;}
+  .gantt-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--line);}
+  .gantt-row:last-child{border-bottom:none;}
+  .gantt-rowlabel{padding:12px 14px;display:flex;flex-direction:column;justify-content:center;}
+  .gantt-rowlabel .grname{font-size:12.5px;font-weight:600;line-height:1.3;}
+  .gantt-rowlabel .grdate{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;}
+  .gantt-track{position:relative;min-height:48px;overflow:visible;padding-right:8px;}
+  .gantt-gridline{position:absolute;top:0;bottom:0;width:1px;background:var(--line);}
+  .gantt-today{position:absolute;top:0;bottom:0;width:2px;background:var(--red-tx);z-index:3;}
+  .gantt-today::before{
+    content:"Today";position:absolute;top:-18px;left:4px;font-family:var(--mono);
+    font-size:9px;font-weight:700;color:var(--red-tx);white-space:nowrap;
+  }
+  .gantt-marker{
+    position:absolute;top:50%;transform:translate(-50%,-50%);
+    width:14px;height:14px;border-radius:50%;border:3px solid #fff;
+    box-shadow:0 0 0 2px currentColor;z-index:2;
+  }
+  .gantt-marker.staging{background:var(--amber-tx);color:var(--amber-tx);}
+  .gantt-marker.deployment{background:var(--green-tx);color:var(--green-tx);}
+  .gantt-marker-wrap{position:absolute;top:50%;left:0;width:0;height:0;z-index:2;}
+  .gantt-marker-wrap .gdot{
+    position:absolute;top:50%;left:0;transform:translate(-50%,-50%);
+    width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px currentColor;
+  }
+  .gantt-marker-wrap.staging .gdot{background:var(--amber-tx);color:var(--amber-tx);}
+  .gantt-marker-wrap.deployment .gdot{background:var(--green-tx);color:var(--green-tx);}
+  .gantt-marker-wrap .glabel{
+    position:absolute;top:50%;left:12px;transform:translateY(-50%);
+    font-size:9.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;
+  }
+  .gantt-marker-wrap.flip .glabel{left:-12px;right:auto;transform:translate(-100%,-50%);text-align:right;}
+  .gantt-marker-wrap.staging .glabel{color:var(--amber-tx);}
+  .gantt-marker-wrap.deployment .glabel{color:var(--green-tx);}
+  .gantt-label{
+    position:absolute;top:50%;transform:translateY(-50%);
+    font-size:9.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+    white-space:nowrap;padding:2px 8px;border-radius:10px;
+  }
+  .gantt-label.staging{background:var(--amber-bg);color:var(--amber-tx);}
+  .gantt-label.deployment{background:var(--green-bg);color:var(--green-tx);}
+
+  .timeline-legend{display:flex;gap:18px;margin-top:16px;font-size:10.5px;color:var(--muted);align-items:center;}
+  .timeline-legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:middle;}
+</style>
+<script>
+  function showView(view){
+    document.getElementById('tableView').classList.toggle('hidden', view!=='table');
+    document.getElementById('timelineView').classList.toggle('hidden', view!=='timeline');
+    document.querySelectorAll('.viewtoggle button').forEach(b=>b.classList.toggle('active', b.dataset.view===view));
+  }
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <h1>Q3/Q4 Deployments</h1>
+      <div class="sub">Executive view · sorted by install date</div>
+    </div>
+    <div class="src">Source: Jira · Last updated: <span id="lastUpdated">Aug 10, 2026 06:00 UTC</span> ·
+      <a href="../../actions/workflows/update-dashboard.yml" target="_blank" style="color:inherit;">Refresh now →</a>
+    </div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi mid"><div class="num">Aug 19</div><div class="lbl">Next install — Indonesia</div></div>
+    <div class="kpi mid"><div class="num">6</div><div class="lbl">Installing within 30 days</div></div>
+    <div class="kpi good"><div class="num">6</div><div class="lbl">Fully ready for installation</div></div>
+    <div class="kpi warn"><div class="num">0</div><div class="lbl">Fully ready for set up</div></div>
+  </div>
+
+  <div class="viewtoggle">
+    <button class="active" data-view="table" onclick="showView('table')">Table</button>
+    <button data-view="timeline" onclick="showView('timeline')">Timeline</button>
+  </div>
+
+  <div id="tableView">
+  <div class="qfilter">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="Q3">Q3 2026</button>
+    <button data-filter="Q4">Q4 2026</button>
+  </div>
+
+  <table class="main">
+    <thead>
+      <tr>
+        <th class="date">Date</th>
+        <th class="proj">Project</th>
+        <th>IP</th>
+        <th>Fiber</th>
+        <th>KMLs Delivered</th>
+        <th class="qcol">Quest.</th>
+        <th>Equipment</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="qdivider" data-q="Q3"><td colspan="7">Q3 2026</td></tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Aug 19</td>
+        <td class="proj">PST Installation — Indonesia</td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/5</span></div></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Aug 28</td>
+        <td class="proj">BEG Groundwater — Texas</td>
+        <td class="center"><div class="stack2"><span class="pill amber">Cross-Connect Delivered</span><span class="posnum">5/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill amber">KMLs Delivered</span><span class="posnum">1/5</span></div></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><div class="stack2"><span class="pill amber">Received</span><span class="posnum">7/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Aug 28</td>
+        <td class="proj">TW DMA — Gipsy Hill</td>
+        <td class="center"><div class="stack2"><span class="pill amber">IP Address Allocated</span><span class="posnum">2/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/5</span></div></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><div class="stack2"><span class="pill amber">Received</span><span class="posnum">7/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Aug 28</td>
+        <td class="proj">TW DMA — Forrest Hill</td>
+        <td class="center"><div class="stack2"><span class="pill amber">IP Address Allocated</span><span class="posnum">2/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill amber">KMLs Delivered</span><span class="posnum">1/5</span></div></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><div class="stack2"><span class="pill amber">Received</span><span class="posnum">7/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Aug 28</td>
+        <td class="proj">TW DMA — Rushey Green</td>
+        <td class="center"><div class="stack2"><span class="pill amber">IP Address Allocated</span><span class="posnum">2/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill amber">KMLs Delivered</span><span class="posnum">1/5</span></div></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><div class="stack2"><span class="pill amber">Received</span><span class="posnum">7/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Sep 4</td>
+        <td class="proj">HPW — Phase 1</td>
+        <td class="center"><div class="stack2"><span class="pill amber">Cross-Connect Ordered</span><span class="posnum">4/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill amber">KMLs Delivered</span><span class="posnum">1/5</span></div></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><div class="stack2"><span class="pill amber">Staging</span><span class="posnum">5/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Sep 18</td>
+        <td class="proj">EXA Italy</td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/5</span></div></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><div class="stack2"><span class="pill amber">Received</span><span class="posnum">7/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Sep 30</td>
+        <td class="proj">Enford Street — Thames Water</td>
+        <td class="center"><div class="stack2"><span class="pill amber">Cross-Connect Ordered</span><span class="posnum">4/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill amber">KMLs Delivered</span><span class="posnum">1/5</span></div></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><div class="stack2"><span class="pill amber">Received</span><span class="posnum">7/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q3">
+        <td class="datecell">Sep 30</td>
+        <td class="proj">1.1 DAS Box trial — London</td>
+        <td class="center"><span class="pill gray">NA</span></td>
+        <td class="center"><span class="pill gray">NA</span></td>
+        <td class="center"><span class="qmark no">–</span></td>
+        <td class="center"><span class="qmark yes">✓</span></td>
+        <td class="center"><div class="stack2"><span class="pill amber">Procurement</span><span class="posnum">4/9</span></div></td>
+      </tr>
+
+      <tr class="qdivider" data-q="Q4"><td colspan="7">Q4 2026</td></tr>
+
+      <tr data-q="Q4">
+        <td class="datecell">Oct 30</td>
+        <td class="proj">Thames Water Ring Main</td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/7</span></div></td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/5</span></div></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/9</span></div></td>
+      </tr>
+
+      <tr data-q="Q4">
+        <td class="datecell">Nov 16</td>
+        <td class="proj">HPW — Phase 2</td>
+        <td class="center"><span class="pill gray">NA</span></td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/5</span></div></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><span class="qmark no">✕</span></td>
+        <td class="center"><div class="stack2"><span class="pill red">Not started</span><span class="posnum">0/9</span></div></td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+  <div id="timelineView" class="hidden">
+
+    <div class="gantt">
+      <div class="gantt-header">
+        <div class="ghcorner"></div>
+        <div class="gantt-months">
+          <div class="gmonth">August 2026</div>
+          <div class="gmonth">September 2026</div>
+          <div class="gmonth">October 2026</div>
+        </div>
+      </div>
+
+      <div class="gantt-body">
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">PST Installation — Indonesia</div><div class="grdate">Aug 19</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap staging" style="left:19.35%"><span class="gdot"></span><span class="glabel">Staging</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">BEG Groundwater — Texas</div><div class="grdate">Aug 28</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap deployment" style="left:29.03%"><span class="gdot"></span><span class="glabel">Deployment</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">TW DMA — Gipsy Hill</div><div class="grdate">Aug 28</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap deployment" style="left:29.03%"><span class="gdot"></span><span class="glabel">Deployment</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">TW DMA — Forrest Hill</div><div class="grdate">Aug 28</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap deployment" style="left:29.03%"><span class="gdot"></span><span class="glabel">Deployment</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">TW DMA — Rushey Green</div><div class="grdate">Aug 28</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap deployment" style="left:29.03%"><span class="gdot"></span><span class="glabel">Deployment</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">HPW — Phase 1</div><div class="grdate">Sep 4</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap deployment" style="left:36.66%"><span class="gdot"></span><span class="glabel">Deployment</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">EXA Italy</div><div class="grdate">Sep 18</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap deployment" style="left:52.22%"><span class="gdot"></span><span class="glabel">Deployment</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">Enford Street — Thames Water</div><div class="grdate">Sep 30</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap deployment" style="left:65.55%"><span class="gdot"></span><span class="glabel">Deployment</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">1.1 DAS Box trial — London</div><div class="grdate">Sep 30</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap staging" style="left:65.55%"><span class="gdot"></span><span class="glabel">Staging</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-rowlabel"><div class="grname">Thames Water Ring Main</div><div class="grdate">Oct 30</div></div>
+          <div class="gantt-track">
+            <div class="gantt-gridline" style="left:33.33%"></div>
+            <div class="gantt-gridline" style="left:66.66%"></div>
+            <div class="gantt-marker-wrap deployment flip" style="left:97.84%"><span class="gdot"></span><span class="glabel">Deployment</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="timeline-legend">
+      <span><span class="dot" style="background:var(--amber-tx)"></span>Staging — parent ticket in prep/To Do</span>
+      <span><span class="dot" style="background:var(--green-tx)"></span>Deployment — parent ticket actively in progress</span>
+    </div>
+  </div>
+
+  <div class="flag">
+    <b>Note:</b> Projects showing NA in the IP column do not require a new cross-connect service — tactically, and for the purposes of this report, they are excluded from IP tracking.
+  </div>
+
+  <div class="legend-flow">
+    <div class="lf-row"><span class="lf-label">IP</span><span class="lf-chain">1 Ordered → 2 IP Allocated → 3 Circuit Delivered → 4 Cross-Connect Ordered → 5 Cross-Connect Delivered → 6 Connected → 7 Live</span></div>
+    <div class="lf-row"><span class="lf-label">Fiber</span><span class="lf-chain">1 KMLs Delivered → 2 Fiber Delivered → 3 Fiber Connected → 4 Validated → 5 Calibrated</span></div>
+    <div class="lf-row"><span class="lf-label">Equipment</span><span class="lf-chain">1 Questionnaire → 2 Design → 3 BoM Quote → 4 Procurement → 5 Staging → 6 Shipping → 7 Received → 8 Installed → 9 Configured</span></div>
+  </div>
+
+</div>
+<script>
+  const buttons = document.querySelectorAll('.qfilter button');
+  const rows = document.querySelectorAll('tr[data-q]');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      rows.forEach(row => {
+        if (filter === 'all' || row.dataset.q === filter) {
+          row.classList.remove('qhidden');
+        } else {
+          row.classList.add('qhidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

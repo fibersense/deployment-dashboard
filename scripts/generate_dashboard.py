@@ -129,8 +129,7 @@ def main():
        f'AND duedate >= "{today.isoformat()}" '
        f'ORDER BY duedate ASC',
        ["summary", "status", "duedate"],
-   ),
-    )
+   )
 
     rows = []
     for issue in parents.get("issues", []):

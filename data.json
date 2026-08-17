@@ -1,34 +1,6 @@
 {
-  "generated_at": "Aug 17, 2026 11:07 UTC",
+  "generated_at": "Aug 17, 2026 11:28 UTC",
   "projects": [
-    {
-      "key": "SDO-1901",
-      "name": "Network Upgrades",
-      "date_label": "Apr 30",
-      "quarter": "OTHER",
-      "parent_status": "Deployment",
-      "ip": [
-        null,
-        null,
-        null,
-        "gray"
-      ],
-      "fiber": [
-        null,
-        null,
-        null,
-        "gray"
-      ],
-      "kml": null,
-      "quest": true,
-      "equipment": [
-        "Received",
-        7,
-        9,
-        "amber"
-      ],
-      "date": "2026-04-30"
-    },
     {
       "key": "SDO-2358",
       "name": "TKG-**** - Indonesia - PST Deployment",
@@ -56,34 +28,6 @@
         "red"
       ],
       "date": "2026-08-19"
-    },
-    {
-      "key": "SDO-1686",
-      "name": "OniTel Digital Asset Initial Role out",
-      "date_label": "Aug 24",
-      "quarter": "Q3",
-      "parent_status": "Partial Service Operations",
-      "ip": [
-        "Live",
-        7,
-        7,
-        "green"
-      ],
-      "fiber": [
-        "Calibrated",
-        5,
-        5,
-        "green"
-      ],
-      "kml": true,
-      "quest": true,
-      "equipment": [
-        "Installed",
-        8,
-        9,
-        "amber"
-      ],
-      "date": "2026-08-24"
     },
     {
       "key": "SDO-2260",

@@ -1,0 +1,61 @@
+{
+  "generated_at": "Aug 17, 2026 10:35 UTC",
+  "projects": [
+    {
+      "key": "SDO-TEST1",
+      "name": "Test Project A",
+      "date_label": "Aug 22",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "IP Address Allocated",
+        2,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": true,
+      "equipment": [
+        "Design Completed",
+        2,
+        9,
+        "amber"
+      ],
+      "date": "2026-08-22"
+    },
+    {
+      "key": "SDO-TEST2",
+      "name": "Test Project B",
+      "date_label": "Sep 26",
+      "quarter": "Q3",
+      "parent_status": "Staging",
+      "ip": [
+        null,
+        null,
+        null,
+        "gray"
+      ],
+      "fiber": [
+        null,
+        null,
+        null,
+        "gray"
+      ],
+      "kml": null,
+      "quest": null,
+      "equipment": [
+        null,
+        null,
+        null,
+        "gray"
+      ],
+      "date": "2026-09-26"
+    }
+  ]
+}

@@ -46,7 +46,7 @@ HW_STAGES = ["Deployment Questionnaire Completed", "Design Completed", "BoM Quot
 
 def search(jql, fields, max_results=100):
     body = json.dumps({"jql": jql, "fields": fields, "maxResults": max_results}).encode()
-    req = urllib.request.Request(f"{BASE}/search", data=body, headers={
+    req = urllib.request.Request(f"{BASE}/search/jql", data=body, headers={
         "Authorization": f"Basic {AUTH}",
         "Accept": "application/json",
         "Content-Type": "application/json",

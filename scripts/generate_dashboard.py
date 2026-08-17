@@ -122,10 +122,14 @@ def quarter_of(date_obj):
 
 
 def main():
-    parents = search(
-        f'project = {PROJECT_KEY} AND issuetype = "Node Deployment" '
-        f'AND statusCategory != Done AND status != "On Hold" ORDER BY duedate ASC',
-        ["summary", "status", "duedate"],
+    today = datetime.date.today()
+   parents = search(
+       f'project = {PROJECT_KEY} AND issuetype = "Node Deployment" '
+       f'AND status in ("Staging", "Deployment") '
+       f'AND duedate >= "{today.isoformat()}" '
+       f'ORDER BY duedate ASC',
+       ["summary", "status", "duedate"],
+   ),
     )
 
     rows = []

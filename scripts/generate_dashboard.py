@@ -123,13 +123,13 @@ def quarter_of(date_obj):
 
 def main():
     today = datetime.date.today()
-   parents = search(
-       f'project = {PROJECT_KEY} AND issuetype = "Node Deployment" '
-       f'AND status in ("Staging", "Deployment") '
-       f'AND duedate >= "{today.isoformat()}" '
-       f'ORDER BY duedate ASC',
-       ["summary", "status", "duedate"],
-   )
+    parents = search(
+        f'project = {PROJECT_KEY} AND issuetype = "Node Deployment" '
+        f'AND status in ("Staging", "Deployment") '
+        f'AND duedate >= "{today.isoformat()}" '
+        f'ORDER BY duedate ASC',
+        ["summary", "status", "duedate"],
+    )
 
     rows = []
     for issue in parents.get("issues", []):

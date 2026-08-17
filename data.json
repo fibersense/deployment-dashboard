@@ -1,38 +1,10 @@
 {
-  "generated_at": "Aug 17, 2026 11:28 UTC",
+  "generated_at": "Aug 17, 2026 23:37 UTC",
   "projects": [
-    {
-      "key": "SDO-2358",
-      "name": "TKG-**** - Indonesia - PST Deployment",
-      "date_label": "Aug 19",
-      "quarter": "Q3",
-      "parent_status": "Staging",
-      "ip": [
-        "Not started",
-        0,
-        7,
-        "red"
-      ],
-      "fiber": [
-        "Not started",
-        0,
-        5,
-        "red"
-      ],
-      "kml": false,
-      "quest": false,
-      "equipment": [
-        "Not started",
-        0,
-        9,
-        "red"
-      ],
-      "date": "2026-08-19"
-    },
     {
       "key": "SDO-2260",
       "name": "BEG Texas - AUS-LUM1",
-      "date_label": "Aug 28",
+      "date_label": "Aug 26",
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
@@ -55,7 +27,7 @@
         9,
         "amber"
       ],
-      "date": "2026-08-28"
+      "date": "2026-08-26"
     },
     {
       "key": "SDO-2182",
@@ -70,12 +42,12 @@
         "amber"
       ],
       "fiber": [
-        "Not started",
-        0,
+        "KMLs Delivered",
+        1,
         5,
-        "red"
+        "amber"
       ],
-      "kml": false,
+      "kml": true,
       "quest": false,
       "equipment": [
         "Received",
@@ -168,6 +140,34 @@
         "amber"
       ],
       "date": "2026-09-04"
+    },
+    {
+      "key": "SDO-2358",
+      "name": "TKG-**** - Indonesia - PST Deployment",
+      "date_label": "Sep 11",
+      "quarter": "Q3",
+      "parent_status": "Staging",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2026-09-11"
     },
     {
       "key": "SDO-1956",

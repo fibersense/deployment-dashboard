@@ -1,10 +1,150 @@
 {
-  "generated_at": "Aug 17, 2026 10:35 UTC",
+  "generated_at": "Aug 17, 2026 11:07 UTC",
   "projects": [
     {
-      "key": "SDO-TEST1",
-      "name": "Test Project A",
-      "date_label": "Aug 22",
+      "key": "SDO-1901",
+      "name": "Network Upgrades",
+      "date_label": "Apr 30",
+      "quarter": "OTHER",
+      "parent_status": "Deployment",
+      "ip": [
+        null,
+        null,
+        null,
+        "gray"
+      ],
+      "fiber": [
+        null,
+        null,
+        null,
+        "gray"
+      ],
+      "kml": null,
+      "quest": true,
+      "equipment": [
+        "Received",
+        7,
+        9,
+        "amber"
+      ],
+      "date": "2026-04-30"
+    },
+    {
+      "key": "SDO-2358",
+      "name": "TKG-**** - Indonesia - PST Deployment",
+      "date_label": "Aug 19",
+      "quarter": "Q3",
+      "parent_status": "Staging",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2026-08-19"
+    },
+    {
+      "key": "SDO-1686",
+      "name": "OniTel Digital Asset Initial Role out",
+      "date_label": "Aug 24",
+      "quarter": "Q3",
+      "parent_status": "Partial Service Operations",
+      "ip": [
+        "Live",
+        7,
+        7,
+        "green"
+      ],
+      "fiber": [
+        "Calibrated",
+        5,
+        5,
+        "green"
+      ],
+      "kml": true,
+      "quest": true,
+      "equipment": [
+        "Installed",
+        8,
+        9,
+        "amber"
+      ],
+      "date": "2026-08-24"
+    },
+    {
+      "key": "SDO-2260",
+      "name": "BEG Texas - AUS-LUM1",
+      "date_label": "Aug 28",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "Cross-Connect Delivered",
+        5,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": true,
+      "equipment": [
+        "Received",
+        7,
+        9,
+        "amber"
+      ],
+      "date": "2026-08-28"
+    },
+    {
+      "key": "SDO-2182",
+      "name": "TW DMA Project - 2026 - Gipsy Hill (LCY-GH1)",
+      "date_label": "Aug 28",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "IP Address Allocated",
+        2,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Received",
+        7,
+        9,
+        "amber"
+      ],
+      "date": "2026-08-28"
+    },
+    {
+      "key": "SDO-2181",
+      "name": "TW DMA Project - 2026 - Rushey Green (LCY-RG1)",
+      "date_label": "Aug 28",
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
@@ -20,19 +160,103 @@
         "amber"
       ],
       "kml": true,
-      "quest": true,
+      "quest": false,
       "equipment": [
-        "Design Completed",
-        2,
+        "Received",
+        7,
         9,
         "amber"
       ],
-      "date": "2026-08-22"
+      "date": "2026-08-28"
     },
     {
-      "key": "SDO-TEST2",
-      "name": "Test Project B",
-      "date_label": "Sep 26",
+      "key": "SDO-2096",
+      "name": "TW DMA Project - 2026 - Forrest Hill (LCY-FH1)",
+      "date_label": "Aug 28",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "IP Address Allocated",
+        2,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": false,
+      "equipment": [
+        "Received",
+        7,
+        9,
+        "amber"
+      ],
+      "date": "2026-08-28"
+    },
+    {
+      "key": "SDO-2285",
+      "name": "HOU-NTR1 - Houston Public Works (HPW) - Phase 1",
+      "date_label": "Sep 4",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "Cross-Connect Ordered",
+        4,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": true,
+      "equipment": [
+        "Staging",
+        5,
+        9,
+        "amber"
+      ],
+      "date": "2026-09-04"
+    },
+    {
+      "key": "SDO-1956",
+      "name": "EXA Italy -- FOG-EXA1",
+      "date_label": "Sep 18",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": true,
+      "equipment": [
+        "Received",
+        7,
+        9,
+        "amber"
+      ],
+      "date": "2026-09-18"
+    },
+    {
+      "key": "SDO-2359",
+      "name": "London 1.1 Unit - Either DR18 or TWT2",
+      "date_label": "Sep 30",
       "quarter": "Q3",
       "parent_status": "Staging",
       "ip": [
@@ -48,14 +272,98 @@
         "gray"
       ],
       "kml": null,
-      "quest": null,
+      "quest": true,
       "equipment": [
+        "Procurement",
+        4,
+        9,
+        "amber"
+      ],
+      "date": "2026-09-30"
+    },
+    {
+      "key": "SDO-2265",
+      "name": "Enford Street - Thames Water",
+      "date_label": "Sep 30",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "Cross-Connect Ordered",
+        4,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": true,
+      "equipment": [
+        "Shipping",
+        6,
+        9,
+        "amber"
+      ],
+      "date": "2026-09-30"
+    },
+    {
+      "key": "SDO-2097",
+      "name": "LHR-BH1 - TW Ring Main - 2026",
+      "date_label": "Oct 30",
+      "quarter": "Q4",
+      "parent_status": "Deployment",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2026-10-30"
+    },
+    {
+      "key": "SDO-2386",
+      "name": "HOU-NTR1 - Houston Public Works (HPW) -Phase 2",
+      "date_label": "Nov 16",
+      "quarter": "Q4",
+      "parent_status": "Staging",
+      "ip": [
         null,
         null,
         null,
         "gray"
       ],
-      "date": "2026-09-26"
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2026-11-16"
     }
   ]
 }

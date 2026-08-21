@@ -1,5 +1,5 @@
 {
-  "generated_at": "Aug 20, 2026 06:08 UTC",
+  "generated_at": "Aug 21, 2026 06:09 UTC",
   "projects": [
     {
       "key": "SDO-2260",
@@ -8,24 +8,24 @@
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
-        "Cross-Connect Delivered",
-        5,
+        "Live",
         7,
-        "amber"
+        7,
+        "green"
       ],
       "fiber": [
-        "KMLs Delivered",
-        1,
+        "Fiber Connected",
+        3,
         5,
         "amber"
       ],
       "kml": true,
       "quest": true,
       "equipment": [
-        "Received",
-        7,
+        "Configured",
         9,
-        "amber"
+        9,
+        "green"
       ],
       "date": "2026-08-26"
     },

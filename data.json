@@ -1,5 +1,5 @@
 {
-  "generated_at": "Aug 25, 2026 06:08 UTC",
+  "generated_at": "Aug 26, 2026 06:09 UTC",
   "projects": [
     {
       "key": "SDO-2260",
@@ -92,8 +92,8 @@
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
-        "IP Address Allocated",
-        2,
+        "Cross-Connect Delivered",
+        5,
         7,
         "amber"
       ],
@@ -220,34 +220,6 @@
       "equipment": [
         "Procurement",
         4,
-        9,
-        "amber"
-      ],
-      "date": "2026-09-30"
-    },
-    {
-      "key": "SDO-2265",
-      "name": "Enford Street - Thames Water",
-      "date_label": "Sep 30",
-      "quarter": "Q3",
-      "parent_status": "Deployment",
-      "ip": [
-        "Cross-Connect Ordered",
-        4,
-        7,
-        "amber"
-      ],
-      "fiber": [
-        "KMLs Delivered",
-        1,
-        5,
-        "amber"
-      ],
-      "kml": true,
-      "quest": true,
-      "equipment": [
-        "Shipping",
-        6,
         9,
         "amber"
       ],

@@ -1,34 +1,6 @@
 {
-  "generated_at": "Aug 26, 2026 06:09 UTC",
+  "generated_at": "Aug 27, 2026 09:03 UTC",
   "projects": [
-    {
-      "key": "SDO-2260",
-      "name": "BEG Texas - AUS-LUM1",
-      "date_label": "Aug 26",
-      "quarter": "Q3",
-      "parent_status": "Deployment",
-      "ip": [
-        "Live",
-        7,
-        7,
-        "green"
-      ],
-      "fiber": [
-        "Fiber Connected",
-        3,
-        5,
-        "amber"
-      ],
-      "kml": true,
-      "quest": true,
-      "equipment": [
-        "Configured",
-        9,
-        9,
-        "green"
-      ],
-      "date": "2026-08-26"
-    },
     {
       "key": "SDO-2182",
       "name": "TW DMA Project - 2026 - Gipsy Hill (LCY-GH1)",

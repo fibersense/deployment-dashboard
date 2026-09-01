@@ -1,38 +1,38 @@
 {
-  "generated_at": "Aug 31, 2026 06:14 UTC",
+  "generated_at": "Sep 01, 2026 06:12 UTC",
   "projects": [
     {
-      "key": "SDO-2285",
-      "name": "HOU-NTR1 - Houston Public Works (HPW) - Phase 1",
+      "key": "SDO-2096",
+      "name": "TW DMA Project - 2026 - Forest Hill (LCY-FH1)",
       "date_label": "Sep 4",
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
-        "Cross-Connect Ordered",
-        4,
+        "Live",
         7,
-        "amber"
+        7,
+        "green"
       ],
       "fiber": [
-        "KMLs Delivered",
-        1,
+        "Fiber Connected",
+        3,
         5,
         "amber"
       ],
       "kml": true,
-      "quest": true,
+      "quest": false,
       "equipment": [
-        "Staging",
-        5,
+        "Configured",
         9,
-        "amber"
+        9,
+        "green"
       ],
       "date": "2026-09-04"
     },
     {
       "key": "SDO-2358",
       "name": "TKG-**** - Indonesia - PST Deployment",
-      "date_label": "Sep 11",
+      "date_label": "Sep 18",
       "quarter": "Q3",
       "parent_status": "Staging",
       "ip": [
@@ -55,12 +55,96 @@
         9,
         "red"
       ],
-      "date": "2026-09-11"
+      "date": "2026-09-18"
+    },
+    {
+      "key": "SDO-2182",
+      "name": "TW DMA Project - 2026 - Gipsy Hill (LCY-GH1)",
+      "date_label": "Sep 18",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "IP Address Allocated",
+        2,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": false,
+      "equipment": [
+        "Received",
+        7,
+        9,
+        "amber"
+      ],
+      "date": "2026-09-18"
+    },
+    {
+      "key": "SDO-2181",
+      "name": "TW DMA Project - 2026 - Rushey Green (LCY-RG1)",
+      "date_label": "Sep 18",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "IP Address Allocated",
+        2,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": false,
+      "equipment": [
+        "Received",
+        7,
+        9,
+        "amber"
+      ],
+      "date": "2026-09-18"
+    },
+    {
+      "key": "SDO-2285",
+      "name": "HOU-NTR1 - Houston Public Works (HPW) - Phase 1",
+      "date_label": "Sep 25",
+      "quarter": "Q3",
+      "parent_status": "Deployment",
+      "ip": [
+        "Cross-Connect Ordered",
+        4,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": true,
+      "equipment": [
+        "Staging",
+        5,
+        9,
+        "amber"
+      ],
+      "date": "2026-09-25"
     },
     {
       "key": "SDO-1956",
       "name": "EXA Italy -- FOG-EXA1",
-      "date_label": "Sep 18",
+      "date_label": "Sep 25",
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
@@ -83,7 +167,7 @@
         9,
         "amber"
       ],
-      "date": "2026-09-18"
+      "date": "2026-09-25"
     },
     {
       "key": "SDO-2097",

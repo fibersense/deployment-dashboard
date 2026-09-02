@@ -1,5 +1,5 @@
 {
-  "generated_at": "Sep 01, 2026 06:12 UTC",
+  "generated_at": "Sep 02, 2026 06:15 UTC",
   "projects": [
     {
       "key": "SDO-2096",
@@ -148,10 +148,10 @@
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
-        "Not started",
-        0,
+        "IP Address Allocated",
+        2,
         7,
-        "red"
+        "amber"
       ],
       "fiber": [
         "Not started",

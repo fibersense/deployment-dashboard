@@ -1,5 +1,5 @@
 {
-  "generated_at": "Sep 08, 2026 06:11 UTC",
+  "generated_at": "Sep 09, 2026 06:11 UTC",
   "projects": [
     {
       "key": "SDO-2096",
@@ -148,8 +148,8 @@
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
-        "IP Address Allocated",
-        2,
+        "Cross-Connect Ordered",
+        4,
         7,
         "amber"
       ],
@@ -162,8 +162,8 @@
       "kml": false,
       "quest": true,
       "equipment": [
-        "Received",
-        7,
+        "Installed",
+        8,
         9,
         "amber"
       ],
@@ -224,34 +224,6 @@
         "red"
       ],
       "date": "2026-11-16"
-    },
-    {
-      "key": "SDO-2359",
-      "name": "London 1.1 Unit - Either DR18 or TWT2",
-      "date_label": "Nov 20",
-      "quarter": "Q4",
-      "parent_status": "Deployment",
-      "ip": [
-        "Not started",
-        0,
-        7,
-        "red"
-      ],
-      "fiber": [
-        "Not started",
-        0,
-        5,
-        "red"
-      ],
-      "kml": false,
-      "quest": true,
-      "equipment": [
-        "Procurement",
-        4,
-        9,
-        "amber"
-      ],
-      "date": "2026-11-20"
     }
   ]
 }

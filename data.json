@@ -1,34 +1,6 @@
 {
-  "generated_at": "Sep 11, 2026 06:11 UTC",
+  "generated_at": "Sep 12, 2026 06:09 UTC",
   "projects": [
-    {
-      "key": "SDO-2096",
-      "name": "TW DMA Project - 2026 - Forest Hill (LCY-FH1)",
-      "date_label": "Sep 11",
-      "quarter": "Q3",
-      "parent_status": "Deployment",
-      "ip": [
-        "Live",
-        7,
-        7,
-        "green"
-      ],
-      "fiber": [
-        "Calibrated",
-        5,
-        5,
-        "green"
-      ],
-      "kml": true,
-      "quest": false,
-      "equipment": [
-        "Configured",
-        9,
-        9,
-        "green"
-      ],
-      "date": "2026-09-11"
-    },
     {
       "key": "SDO-2182",
       "name": "TW DMA Project - 2026 - Gipsy Hill (LCY-GH1)",

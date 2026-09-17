@@ -1,5 +1,5 @@
 {
-  "generated_at": "Sep 16, 2026 06:11 UTC",
+  "generated_at": "Sep 17, 2026 06:11 UTC",
   "projects": [
     {
       "key": "SDO-2182",
@@ -132,12 +132,12 @@
         "red"
       ],
       "kml": false,
-      "quest": false,
+      "quest": true,
       "equipment": [
-        "Not started",
-        0,
+        "Design Completed",
+        2,
         9,
-        "red"
+        "amber"
       ],
       "date": "2026-10-30"
     },

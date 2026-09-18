@@ -1,5 +1,5 @@
 {
-  "generated_at": "Sep 17, 2026 06:11 UTC",
+  "generated_at": "Sep 18, 2026 06:11 UTC",
   "projects": [
     {
       "key": "SDO-2182",
@@ -112,6 +112,34 @@
         "amber"
       ],
       "date": "2026-09-25"
+    },
+    {
+      "key": "SDO-2409",
+      "name": "TKG-CLS1 (PST - Indonesia Install)",
+      "date_label": "Oct 2",
+      "quarter": "Q4",
+      "parent_status": "Deployment",
+      "ip": [
+        "Live",
+        7,
+        7,
+        "green"
+      ],
+      "fiber": [
+        "Fiber Connected",
+        3,
+        5,
+        "amber"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Configured",
+        9,
+        9,
+        "green"
+      ],
+      "date": "2026-10-02"
     },
     {
       "key": "SDO-2097",

@@ -1,62 +1,6 @@
 {
-  "generated_at": "Sep 25, 2026 06:11 UTC",
+  "generated_at": "Sep 26, 2026 06:10 UTC",
   "projects": [
-    {
-      "key": "SDO-2285",
-      "name": "HOU-NTR1 - Houston Public Works (HPW) - Phase 1",
-      "date_label": "Sep 25",
-      "quarter": "Q3",
-      "parent_status": "Deployment",
-      "ip": [
-        "Cross-Connect Ordered",
-        4,
-        7,
-        "amber"
-      ],
-      "fiber": [
-        "KMLs Delivered",
-        1,
-        5,
-        "amber"
-      ],
-      "kml": true,
-      "quest": true,
-      "equipment": [
-        "Configured",
-        9,
-        9,
-        "green"
-      ],
-      "date": "2026-09-25"
-    },
-    {
-      "key": "SDO-1956",
-      "name": "EXA Italy -- FOG-EXA1",
-      "date_label": "Sep 25",
-      "quarter": "Q3",
-      "parent_status": "Deployment",
-      "ip": [
-        "Cross-Connect Ordered",
-        4,
-        7,
-        "amber"
-      ],
-      "fiber": [
-        "Not started",
-        0,
-        5,
-        "red"
-      ],
-      "kml": false,
-      "quest": true,
-      "equipment": [
-        "Installed",
-        8,
-        9,
-        "amber"
-      ],
-      "date": "2026-09-25"
-    },
     {
       "key": "SDO-2182",
       "name": "TW DMA Project - 2026 - Gipsy Hill (LCY-GH1)",
@@ -138,6 +82,62 @@
         9,
         9,
         "green"
+      ],
+      "date": "2026-10-02"
+    },
+    {
+      "key": "SDO-2285",
+      "name": "HOU-NTR1 - Houston Public Works (HPW) - Phase 1",
+      "date_label": "Oct 2",
+      "quarter": "Q4",
+      "parent_status": "Deployment",
+      "ip": [
+        "Cross-Connect Ordered",
+        4,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": true,
+      "equipment": [
+        "Configured",
+        9,
+        9,
+        "green"
+      ],
+      "date": "2026-10-02"
+    },
+    {
+      "key": "SDO-1956",
+      "name": "EXA Italy -- FOG-EXA1",
+      "date_label": "Oct 2",
+      "quarter": "Q4",
+      "parent_status": "Deployment",
+      "ip": [
+        "Cross-Connect Ordered",
+        4,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": true,
+      "equipment": [
+        "Installed",
+        8,
+        9,
+        "amber"
       ],
       "date": "2026-10-02"
     },

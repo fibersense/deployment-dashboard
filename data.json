@@ -1,5 +1,5 @@
 {
-  "generated_at": "Sep 29, 2026 06:12 UTC",
+  "generated_at": "Sep 30, 2026 06:12 UTC",
   "projects": [
     {
       "key": "SDO-2182",
@@ -8,24 +8,24 @@
       "quarter": "Q3",
       "parent_status": "Deployment",
       "ip": [
-        "Cross-Connect Delivered",
-        5,
+        "Live",
         7,
-        "amber"
+        7,
+        "green"
       ],
       "fiber": [
-        "KMLs Delivered",
-        1,
+        "Fiber Connected",
+        3,
         5,
         "amber"
       ],
       "kml": true,
       "quest": false,
       "equipment": [
-        "Received",
-        7,
+        "Configured",
         9,
-        "amber"
+        9,
+        "green"
       ],
       "date": "2026-09-30"
     },
@@ -86,34 +86,6 @@
       "date": "2026-10-02"
     },
     {
-      "key": "SDO-2285",
-      "name": "HOU-NTR1 - Houston Public Works (HPW) - Phase 1",
-      "date_label": "Oct 2",
-      "quarter": "Q4",
-      "parent_status": "Deployment",
-      "ip": [
-        "Cross-Connect Ordered",
-        4,
-        7,
-        "amber"
-      ],
-      "fiber": [
-        "KMLs Delivered",
-        1,
-        5,
-        "amber"
-      ],
-      "kml": true,
-      "quest": true,
-      "equipment": [
-        "Configured",
-        9,
-        9,
-        "green"
-      ],
-      "date": "2026-10-02"
-    },
-    {
       "key": "SDO-1956",
       "name": "EXA Italy -- FOG-EXA1",
       "date_label": "Oct 2",
@@ -140,6 +112,34 @@
         "amber"
       ],
       "date": "2026-10-02"
+    },
+    {
+      "key": "SDO-2265",
+      "name": "Enford Street - Thames Water",
+      "date_label": "Oct 9",
+      "quarter": "Q4",
+      "parent_status": "Deployment",
+      "ip": [
+        "Cross-Connect Ordered",
+        4,
+        7,
+        "amber"
+      ],
+      "fiber": [
+        "KMLs Delivered",
+        1,
+        5,
+        "amber"
+      ],
+      "kml": true,
+      "quest": true,
+      "equipment": [
+        "Shipping",
+        6,
+        9,
+        "amber"
+      ],
+      "date": "2026-10-09"
     },
     {
       "key": "SDO-2097",
@@ -172,7 +172,7 @@
     {
       "key": "SDO-2386",
       "name": "HOU-NTR1 - Houston Public Works (HPW) -Phase 2",
-      "date_label": "Nov 16",
+      "date_label": "Dec 31",
       "quarter": "Q4",
       "parent_status": "Staging",
       "ip": [
@@ -195,35 +195,7 @@
         9,
         "red"
       ],
-      "date": "2026-11-16"
-    },
-    {
-      "key": "SDO-2265",
-      "name": "Enford Street - Thames Water",
-      "date_label": "Dec 15",
-      "quarter": "Q4",
-      "parent_status": "Deployment",
-      "ip": [
-        "Cross-Connect Ordered",
-        4,
-        7,
-        "amber"
-      ],
-      "fiber": [
-        "KMLs Delivered",
-        1,
-        5,
-        "amber"
-      ],
-      "kml": true,
-      "quest": true,
-      "equipment": [
-        "Shipping",
-        6,
-        9,
-        "amber"
-      ],
-      "date": "2026-12-15"
+      "date": "2026-12-31"
     }
   ]
 }

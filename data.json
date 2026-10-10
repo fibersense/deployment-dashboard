@@ -1,34 +1,6 @@
 {
-  "generated_at": "Oct 09, 2026 06:12 UTC",
+  "generated_at": "Oct 10, 2026 06:11 UTC",
   "projects": [
-    {
-      "key": "SDO-2265",
-      "name": "Enford Street - Thames Water",
-      "date_label": "Oct 9",
-      "quarter": "Q4",
-      "parent_status": "Deployment",
-      "ip": [
-        "Cross-Connect Ordered",
-        4,
-        7,
-        "amber"
-      ],
-      "fiber": [
-        "KMLs Delivered",
-        1,
-        5,
-        "amber"
-      ],
-      "kml": true,
-      "quest": true,
-      "equipment": [
-        "Shipping",
-        6,
-        9,
-        "amber"
-      ],
-      "date": "2026-10-09"
-    },
     {
       "key": "SDO-2097",
       "name": "LHR-BH1 - TW Ring Main - 2026",

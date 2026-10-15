@@ -1,5 +1,5 @@
 {
-  "generated_at": "Oct 14, 2026 06:10 UTC",
+  "generated_at": "Oct 15, 2026 06:11 UTC",
   "projects": [
     {
       "key": "SDO-2097",
@@ -28,6 +28,34 @@
         "amber"
       ],
       "date": "2026-10-30"
+    },
+    {
+      "key": "SDO-2431",
+      "name": "BW Digital Nongsa-Changi/Digital Park - Data Centre Ring",
+      "date_label": "Nov 6",
+      "quarter": "Q4",
+      "parent_status": "Staging",
+      "ip": [
+        null,
+        null,
+        null,
+        "gray"
+      ],
+      "fiber": [
+        null,
+        null,
+        null,
+        "gray"
+      ],
+      "kml": null,
+      "quest": null,
+      "equipment": [
+        null,
+        null,
+        null,
+        "gray"
+      ],
+      "date": "2026-11-06"
     },
     {
       "key": "SDO-2429",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "Oct 26, 2026 06:14 UTC",
+  "generated_at": "Oct 27, 2026 06:11 UTC",
   "projects": [
     {
       "key": "SDO-2097",
@@ -58,34 +58,6 @@
       "date": "2026-11-06"
     },
     {
-      "key": "SDO-2429",
-      "name": "SIN - SP Power Phase 2",
-      "date_label": "Jan 5",
-      "quarter": "OTHER",
-      "parent_status": "Staging",
-      "ip": [
-        null,
-        null,
-        null,
-        "gray"
-      ],
-      "fiber": [
-        null,
-        null,
-        null,
-        "gray"
-      ],
-      "kml": null,
-      "quest": null,
-      "equipment": [
-        null,
-        null,
-        null,
-        "gray"
-      ],
-      "date": "2027-01-05"
-    },
-    {
       "key": "SDO-2386",
       "name": "HOU-NTR1 - Houston Public Works (HPW) -Phase 2",
       "date_label": "Jan 5",
@@ -112,6 +84,34 @@
         "red"
       ],
       "date": "2027-01-05"
+    },
+    {
+      "key": "SDO-2429",
+      "name": "SIN - SP Power Phase 2",
+      "date_label": "Jan 19",
+      "quarter": "OTHER",
+      "parent_status": "Staging",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2027-01-19"
     }
   ]
 }

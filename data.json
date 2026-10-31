@@ -1,34 +1,6 @@
 {
-  "generated_at": "Oct 30, 2026 06:08 UTC",
+  "generated_at": "Oct 31, 2026 06:06 UTC",
   "projects": [
-    {
-      "key": "SDO-2097",
-      "name": "LHR-BH1 - TW Ring Main - 2026",
-      "date_label": "Oct 30",
-      "quarter": "Q4",
-      "parent_status": "Deployment",
-      "ip": [
-        "Not started",
-        0,
-        7,
-        "red"
-      ],
-      "fiber": [
-        "Not started",
-        0,
-        5,
-        "red"
-      ],
-      "kml": false,
-      "quest": true,
-      "equipment": [
-        "Design Completed",
-        2,
-        9,
-        "amber"
-      ],
-      "date": "2026-10-30"
-    },
     {
       "key": "SDO-2431",
       "name": "BW Digital (BTH-CLS1) Nongsa-Changi/Digital Park - Data Centre Ring",
@@ -42,10 +14,10 @@
         "green"
       ],
       "fiber": [
-        "Fiber Connected",
-        3,
+        "Calibrated",
         5,
-        "amber"
+        5,
+        "green"
       ],
       "kml": true,
       "quest": true,

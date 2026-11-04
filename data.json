@@ -1,34 +1,6 @@
 {
-  "generated_at": "Nov 03, 2026 06:07 UTC",
+  "generated_at": "Nov 04, 2026 06:07 UTC",
   "projects": [
-    {
-      "key": "SDO-2431",
-      "name": "BW Digital (BTH-CLS1) Nongsa-Changi/Digital Park - Data Centre Ring",
-      "date_label": "Nov 3",
-      "quarter": "Q4",
-      "parent_status": "Deployment",
-      "ip": [
-        "Live",
-        7,
-        7,
-        "green"
-      ],
-      "fiber": [
-        "Calibrated",
-        5,
-        5,
-        "green"
-      ],
-      "kml": true,
-      "quest": true,
-      "equipment": [
-        "Configured",
-        9,
-        9,
-        "green"
-      ],
-      "date": "2026-11-03"
-    },
     {
       "key": "SDO-2386",
       "name": "HOU-NTR1 - Houston Public Works (HPW) -Phase 2",

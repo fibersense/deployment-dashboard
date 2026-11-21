@@ -1,5 +1,5 @@
 {
-  "generated_at": "Nov 20, 2026 06:07 UTC",
+  "generated_at": "Nov 21, 2026 06:06 UTC",
   "projects": [
     {
       "key": "SDO-2386",
@@ -30,11 +30,11 @@
       "date": "2027-01-05"
     },
     {
-      "key": "SDO-2429",
-      "name": "SIN - SP Power Phase 2",
-      "date_label": "Jan 19",
+      "key": "SDO-2458",
+      "name": "Singapore Power - West Jurong Island - SIN-WJI1",
+      "date_label": "Feb 12",
       "quarter": "OTHER",
-      "parent_status": "Staging",
+      "parent_status": "Deployment",
       "ip": [
         "Not started",
         0,
@@ -55,7 +55,119 @@
         9,
         "red"
       ],
-      "date": "2027-01-19"
+      "date": "2027-02-12"
+    },
+    {
+      "key": "SDO-2457",
+      "name": "Singapore Power - Woodlands - SIN-WDL1",
+      "date_label": "Feb 12",
+      "quarter": "OTHER",
+      "parent_status": "Deployment",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2027-02-12"
+    },
+    {
+      "key": "SDO-2456",
+      "name": "Singapore Power - Paya Lebar - SIN-PYL1",
+      "date_label": "Feb 12",
+      "quarter": "OTHER",
+      "parent_status": "Deployment",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2027-02-12"
+    },
+    {
+      "key": "SDO-2455",
+      "name": "Singapore Power - Labrador - SIN-LAB1",
+      "date_label": "Feb 12",
+      "quarter": "OTHER",
+      "parent_status": "Deployment",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2027-02-12"
+    },
+    {
+      "key": "SDO-2454",
+      "name": "Singapore Power - Ayer Rajah - SIN-AYR1",
+      "date_label": "Feb 12",
+      "quarter": "OTHER",
+      "parent_status": "Deployment",
+      "ip": [
+        "Not started",
+        0,
+        7,
+        "red"
+      ],
+      "fiber": [
+        "Not started",
+        0,
+        5,
+        "red"
+      ],
+      "kml": false,
+      "quest": false,
+      "equipment": [
+        "Not started",
+        0,
+        9,
+        "red"
+      ],
+      "date": "2027-02-12"
     }
   ]
 }
